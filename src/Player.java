@@ -12,7 +12,7 @@ public class Player {
         if (position + number <= maxCell) position += number;
     }
 
-    public void sliding(Integer number) {
+    public void takeEffect(Integer number) {
         position = number;
     }
 

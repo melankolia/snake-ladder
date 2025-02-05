@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Board {
@@ -21,39 +20,21 @@ public class Board {
         initPlayer();
     }
 
-    public void initLadder() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Input Total Ladder: ");
-
-        ladder = new Ladder(scan.nextInt());
-        for (int i = 0; i < ladder.total ; i++) {
-            System.out.print("Position: ");
-            int x = scan.nextInt();
-            int y = scan.nextInt();
-
-            HashMap<Integer, Integer> position = new HashMap<>();
-            position.put(x, y);
-
-            ladder.position.add(position);
-        }
-    }
-
     public void initSnake() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Input Total Snake: ");
 
         snake = new Snake(scan.nextInt());
-        for (int i = 0; i < snake.total ; i++) {
-            System.out.print("Position: ");
-            int x = scan.nextInt();
-            int y = scan.nextInt();
-
-            HashMap<Integer, Integer> position = new HashMap<>();
-            position.put(x, y);
-
-            snake.position.add(position);
-        }
     }
+
+    public void initLadder() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Input Total Ladder: ");
+
+        ladder = new Ladder(scan.nextInt());
+    }
+
+
 
     public void initPlayer() {
         Scanner scan = new Scanner(System.in);
@@ -81,10 +62,10 @@ public class Board {
                player.move(step, maxCell);
 
                step = ladder.check(player.position);
-               if (step != 0) player.sliding(step);
+               if (step != 0) player.takeEffect(step);
 
                step = snake.check(player.position);
-               if (step != 0) player.sliding(step);
+               if (step != 0) player.takeEffect(step);
 
 
                System.out.println(" to " + player.position);
