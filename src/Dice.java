@@ -1,11 +1,16 @@
 public class Dice {
-    Double maxPoint;
+    Integer maxPoint;
+    Integer minPoint = 1;
 
     Dice(Integer maxPoint) {
-        this.maxPoint = Double.valueOf(maxPoint);
+        this.maxPoint = maxPoint;
     }
 
     public Integer shuffle() {
-        return (int) (Math.random() * maxPoint);
+
+        /**
+         * This is Formula For Calculate Min - Max Dice Point
+         * */
+        return (int) Math.floor(Math.random() * (maxPoint - minPoint + 1) + minPoint);
     }
 }
