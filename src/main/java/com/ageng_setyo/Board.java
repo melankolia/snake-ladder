@@ -1,3 +1,5 @@
+package com.ageng_setyo;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,8 +10,9 @@ public class Board {
     Dice dice;
     Ladder ladder;
     Snake snake;
-    Integer maxPlayers = 2;
-    Integer maxCell = 100;
+
+    int maxPlayers = 2;
+    int maxCell = 100;
 
     Board() {
         players = new ArrayList<>();
@@ -22,24 +25,22 @@ public class Board {
 
     public void initSnake() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Input Total Snake: ");
+        System.out.print("Input Total main.java.com.ageng_setyo.Snake: ");
 
         snake = new Snake(scan.nextInt());
     }
 
     public void initLadder() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Input Total Ladder: ");
+        System.out.print("Input Total main.java.com.ageng_setyo.Ladder: ");
 
         ladder = new Ladder(scan.nextInt());
     }
 
-
-
     public void initPlayer() {
         Scanner scan = new Scanner(System.in);
         for (int i = 1; i <= maxPlayers; i++) {
-            System.out.print("Input Player " + i + " Name: ");
+            System.out.print("Input main.java.com.ageng_setyo.Player " + i + " Name: ");
             addPlayer(scan.nextLine());
         }
     }
@@ -55,7 +56,7 @@ public class Board {
            for (int i = 0; i < maxPlayers ; i++) {
                Player player = players.get(i);
 
-               Integer step = dice.shuffle();
+               int step = dice.shuffle();
 
                System.out.print(player.name + " rolled a " + step + " and moved From " + player.position);
 
@@ -66,7 +67,6 @@ public class Board {
 
                step = snake.check(player.position);
                if (step != 0) player.takeEffect(step);
-
 
                System.out.println(" to " + player.position);
 

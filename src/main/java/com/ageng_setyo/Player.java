@@ -1,3 +1,5 @@
+package com.ageng_setyo;
+
 public class Player {
     String name;
     Integer position = 0;

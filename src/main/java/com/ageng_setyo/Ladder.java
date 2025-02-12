@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+package com.ageng_setyo;
 
 public class Ladder extends Effect {
 
