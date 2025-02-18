@@ -2,20 +2,32 @@ package com.ageng_setyo;
 
 public class Player {
     String name;
-    Integer position = 0;
+    int position = 0;
 
-    Player(String name) {
+    public Player(String name) {
         this.name = name;
     }
 
-    public void move(Integer number, Integer maxCell) {
+    public void move(int number, int maxCell) {
 
         // Validate if Player move exceed the maxCell then it Doesn't Move at all
-        if (position + number <= maxCell) position += number;
+        if (position + number <= maxCell)
+            position += number;
     }
 
-    public void takeEffect(Integer number) {
+    public void takeEffect(int number) {
         position = number;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }

@@ -4,7 +4,7 @@ public class Dice {
     int maxPoint;
     int minPoint = 1;
 
-    Dice(int maxPoint) {
+    public Dice(int maxPoint) {
         this.maxPoint = maxPoint;
     }
 
@@ -14,5 +14,9 @@ public class Dice {
          * This is Formula For Calculate Min - Max main.java.com.ageng_setyo.Dice Point
          * */
         return (int) Math.floor(Math.random() * (maxPoint - minPoint + 1) + minPoint);
+    }
+
+    public int getMaxPoint() {
+        return maxPoint;
     }
 }

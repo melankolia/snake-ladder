@@ -8,17 +8,18 @@ public class Effect {
     ArrayList<HashMap<Integer, Integer>> position;
     int total;
 
-    Effect(int total) {
+    public Effect(int total) {
         this.position = new ArrayList<>();
         this.total = total;
 
+        Scanner scan = new Scanner(System.in);
         for (int i = 0; i < this.total ; i++) {
-            Scanner scan = new Scanner(System.in);
 
             System.out.print("Position: ");
             int x = scan.nextInt();
             int y = scan.nextInt();
 
+            System.out.println("Position: " + x + ", " + y);
             HashMap<Integer, Integer> position = new HashMap<>();
             position.put(x, y);
 
@@ -36,5 +37,9 @@ public class Effect {
         }
 
         return result;
+    }
+
+    public int getTotal() {
+        return total;
     }
 }
